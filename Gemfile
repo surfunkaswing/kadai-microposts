@@ -10,6 +10,8 @@ end
 gem 'rails', '~> 5.0.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+# Use mysql as the database for Active Record
+gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -53,3 +55,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'kaminari'
+
+group :production do
+  gem 'pg', '0.21.0'
+end
+
+# for test data
+gem 'faker'
+gem 'forgery'

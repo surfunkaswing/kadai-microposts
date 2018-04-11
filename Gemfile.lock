@@ -54,7 +54,10 @@ GEM
     crass (1.0.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    faker (1.8.7)
+      i18n (>= 0.7)
     ffi (1.9.23)
+    forgery (0.7.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.0.0)
@@ -91,9 +94,11 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
+    mysql2 (0.4.10)
     nio4r (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    pg (0.21.0)
     puma (3.11.3)
     rack (2.0.4)
     rack-test (0.6.3)
@@ -175,10 +180,14 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.2)
+  faker
+  forgery
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
   listen (~> 3.0.5)
+  mysql2 (>= 0.3.18, < 0.5)
+  pg (= 0.21.0)
   puma (~> 3.0)
   rails (~> 5.0.6)
   sass-rails (~> 5.0)

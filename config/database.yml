@@ -5,21 +5,36 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+#  adapter: sqlite3
+#  encoding: utf8
+#  pool: 5
+#  username: root
+#  password:
+#  socket: /var/run/mysqld/mysqld.sock
+
+  adapter: mysql2
+  encoding: utf8
   pool: 5
-  timeout: 5000
+  username: root
+  password:
+  socket: /var/lib/mysql/mysql.sock
+#  host: localhost
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: microposts_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: microposts_test
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: microposts_production
+  username: microposts
+  password: <%= ENV['MICROPOSTS_DATABASE_PASSWORD'] %>
